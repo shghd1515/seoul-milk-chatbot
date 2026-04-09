@@ -9,10 +9,45 @@
 [![Gemini](https://img.shields.io/badge/Gemini_2.5_Flash-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
 [![ChromaDB](https://img.shields.io/badge/ChromaDB-0.5.23-FF6B35?style=for-the-badge)](https://www.trychroma.com/)
 
+![서울우유 챗봇 시연](docs/demo.gif)
+
 🔗 **배포 URL:** https://seoul-milk-chatbot.onrender.com  
 📂 **GitHub:** https://github.com/shghd1515/seoul-milk-chatbot
 
 > 💡 Render 무료 플랜 특성상 첫 접속 시 30초~1분의 cold start 시간이 소요될 수 있습니다.
+
+---
+
+## 📸 스크린샷
+
+<table>
+  <tr>
+    <td width="50%">
+      <b>메인 화면</b><br>
+      <img src="docs/screenshot-main.png" alt="메인 화면" />
+    </td>
+    <td width="50%">
+      <b>할루시네이션 방지</b><br>
+      <img src="docs/screenshot-no-info.png" alt="정보 없음 응답" />
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <b>제품 정보 답변 (1)</b><br>
+      <img src="docs/screenshot-product-cards-1.png" alt="상품 카드 1" />
+    </td>
+    <td width="50%">
+      <b>제품 정보 답변 (2)</b><br>
+      <img src="docs/screenshot-product-cards-2.png" alt="상품 카드 2" />
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <b>레시피 답변</b><br>
+      <img src="docs/screenshot-recipe.png" alt="레시피 답변" width="50%" />
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -166,6 +201,7 @@ seoul-milk-chatbot/
 │   └── retriever.py          # 벡터 검색 + LLM 호출 + 출처 메타데이터 구성
 ├── static/
 │   └── index.html            # 싱글 페이지 채팅 UI (Vanilla JS)
+├── docs/                     # 스크린샷·시연 GIF
 ├── chroma_db/                # 벡터 DB 영속 저장소 (배포 포함)
 ├── app.py                    # FastAPI 엔트리포인트
 ├── requirements.txt          # 의존성 (버전 핀)
