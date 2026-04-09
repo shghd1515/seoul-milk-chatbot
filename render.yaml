@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: seoul-milk-chatbot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false    # 대시보드에서 직접 입력 (비밀값)
+      - key: GEMINI_MODEL
+        value: models/gemini-2.5-flash
+      - key: PYTHON_VERSION
+        value: 3.11.9

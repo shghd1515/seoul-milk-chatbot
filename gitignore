@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# 환경변수 (절대 커밋하지 말 것)
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# 로그
+*.log
+
+# 크롤링 원본 데이터는 선택적으로 포함
+# (배포 시 embedder를 재실행하지 않으려면 주석 유지)
+# crawling/data/
+
+# chroma_db는 배포에 포함 (Git에 추적)
+# chroma_db/  ← 이 줄은 의도적으로 주석 처리
