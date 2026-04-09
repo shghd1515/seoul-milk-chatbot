@@ -4,6 +4,7 @@
 """
 
 import os
+import traceback
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -72,7 +73,13 @@ def chat(req: ChatRequest):
         result = retriever.answer(req.message, history=req.history)
         return ChatResponse(answer=result["answer"], sources=result["sources"])
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        # 🔍 전체 스택 트레이스를 Render 로그에 강제 출력
+        print("=" * 60, flush=True)
+        print("[ERROR] /api/chat 처리 중 예외 발생", flush=True)
+        print(f"[ERROR] 질문: {req.message}", flush=True)
+        traceback.print_exc()
+        print("=" * 60, flush=True)
+        raise HTTPException(status_code=500, detail=f"{type(e).__name__}: {e}")
 
 
 if __name__ == "__main__":
